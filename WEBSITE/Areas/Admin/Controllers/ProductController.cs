@@ -86,6 +86,7 @@ namespace WEBSITE.Areas.Admin.Controllers
             return View(objProduct);
         }
         [HttpPost]
+
         public ActionResult Delete(Product objPro)
         {
             var objProduct = obj.Product.Where(n => n.id == objPro.id).FirstOrDefault();
