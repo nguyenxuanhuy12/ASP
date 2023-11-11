@@ -1,0 +1,64 @@
+﻿@model WEBSITE.Context.Users
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>User</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="form-group">
+                <label for="fullname" class="form-label">Họ của bạn</label>
+                <input id="fullname" name="fullname" type="text" placeholder="VD: Nguyễn" class="form-control">
+                <span class="form-message"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label for="fullname" class="form-label">Tên của bạn</label>
+                <input id="fullname" name="fullname" type="text" placeholder="VD: Huy" class="form-control">
+                <span class="form-message"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="text" placeholder="VD: email@gmail.com" class="form-control">
+                <span class="form-message"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                <span class="form-message"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Đăng ký" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="container signin">
+            <p>Bạn đã có tài khoản<a href="@Url.Action("Login", "Home")">Đăng nhập</a>.</p>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay lại", "Index")
+</div>
+

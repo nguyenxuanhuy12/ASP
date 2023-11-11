@@ -1,0 +1,89 @@
+﻿@Model List<WEBSITE.Context.Category>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('~/Content/images/bg_1.jpg')">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-lg-7">
+                    <h2 class="mb-0">SmartPhone Gaming</h2>
+                    <p>Lựa chọn dành cho game thủ.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="course-1-item">
+                            <figure class="thumnail">
+                                <a href="@Url.Action("ProductCategory","Category", new { Id = item.id})"><img src="~/Content/images/@item.Avatar" alt="Image" class="img-fluid"></a>
+
+                                <div class="category"><h3>@item.Name</h3></div>
+                            </figure>
+                            <div class="course-1-content pb-4">
+                                <h2>Chất Lượng Của Sản Phẩm</h2>
+                                <div class="rating text-center mb-3">
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                </div>
+                                <p class="desc mb-4">Đỉnh cao của hiệu năng SmartPhone Gaming vô cùng hầm hố.</p>
+                                <p><a href="@Url.Action("ProductCategory","Category", new { Id = item.id})" class="btn btn-primary rounded-0 px-4">Xem Ngay</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section-bg style-1" style="background-image: url('~/Content/images/hero_1.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <span class="icon flaticon-mortarboard"></span>
+                    <h3>Tầm nhìn của shop</h3>
+                    <p>
+                        Xây dựng một doanh nghiệp vững mạnh về tài chính và vững chãi về đời sống tinh thần.
+                        Doanh nghiệp hạnh phúc và phụng sự, góp phần xây dựng xã hội phồn vinh.
+                        Phủ sóng tất cả các tỉnh/ thành phố lớn tại Việt Nam cung cấp các sản phẩm giá tốt, mang lại sự an tâm, tin tưởng và các trải nghiệm hài lòng cho khách hàng.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <span class="icon flaticon-school-material"></span>
+                    <h3>Cam kết của shop</h3>
+                    <p>
+                        Đem đến cho khách hàng các sản phẩm giá tốt, mang lại sự an tâm, tin tưởng.
+                        Đem đến cho nhân viên một môi trường làm việc thân thiện, có nhiều cơ hội phát triển.
+                        Đem đến cho quản lý một sân chơi công bằng để thể hiện, đảm bảo cuộc sống sung túc.
+                        Đem đến cho mọi đối tác sự hợp tác chặt chẽ, tôn trọng lẫn nhau & đôi bên cùng phát triển.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <span class="icon flaticon-library"></span>
+                    <h3>Mục tiêu hướng tới</h3>
+                    <p>
+                        Phát triển cá nhân: Tạo ra môi trường bình đẳng cho các thành viên phát huy năng lực cá nhân & có một đời sống đầy đủ, sung túc cả về vật chất lẫn đời sống tinh thần.
+                        Môi trường làm việc: Xây dựng môi trường làm việc đoàn kết, thương yêu nhau trên giá trị cốt lõi của tình huynh đệ.
+                        Đóng góp xã hội: Tạo ra hàng ngàn việc làm, đóng thuế đầy đủ.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
